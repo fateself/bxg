@@ -1,0 +1,28 @@
+{
+  "name": "bxg",
+  "version": "1.0.0",
+  "description": "create a new website : bxg",
+  "main": "index.js",
+  "dependencies": {
+    "art-template": "^4.0.0-beta8",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "less": "^2.7.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fateself/bxg.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fateself/bxg/issues"
+  },
+  "homepage": "https://github.com/fateself/bxg#readme"
+}
