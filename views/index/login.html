@@ -10,20 +10,20 @@
     <div class="login">
         <div class="login-wrap">
             <div class="avatar">
-                <img src="./uploads/monkey.png" class="img-circle" alt="">
+                <img src="/uploads/monkey.png" class="img-circle" alt="">
             </div>
-            <form action="" class="col-md-offset-1 col-md-10">
+            <form id="loginForm" class="col-md-offset-1 col-md-10">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">
                         <i class="fa fa-user"></i>
                     </span>
-                    <input type="text" class="form-control" placeholder="用户名">
+                    <input type="text" class="form-control" name = "tc_name" placeholder="用户名">
                 </div>
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">
                         <i class="fa fa-key"></i>
                     </span>
-                    <input type="password" class="form-control" placeholder="密码">
+                    <input type="password" class="form-control" name = "tc_pass" placeholder="密码">
                 </div>
                 <button type="submit" class="btn btn-lg btn-primary btn-block">登 录</button>
             </form>
@@ -31,5 +31,53 @@
     </div>
     
     <?php include_once( '/views/common/script.html' )?>
+    <script>
+
+      /*  $( 'loginForm' ).on( 'submit',function( e ) {
+            var formData = $(this).serialize();
+
+            $.ajax({
+                url:'/api/login',
+                type:'post',
+                data:formData,
+                success:function( info ){
+                    console.log(info);
+                }
+
+            })
+            return false;
+        } )*/
+         $( '#loginForm' ).on( 'submit', function ( e ) {
+
+
+            // 在 jq 中提供了一个方法 序列化( serialize )
+            var formData = $( this ).serialize();
+
+            // 真正的请求数据
+            $.ajax({
+                url: '/api/login',                      // 请求的目标地址
+                type: 'post',                           // 请求方法
+                data: formData,                         // 请求是发送的数据
+                success: function ( info ) {    // 请求成功后执行回调
+                    // console.log( info );
+                    if ( info.code == 200 ) {
+
+                        alert( '登录成功' );
+
+                        // 存储数据 
+                        $.cookie( 'profile', JSON.stringify( info.result ), { path: '/' } );
+
+                        // 跳转
+                        location.href = '/';
+                    }
+                }
+            });
+
+
+
+            return false; // hack 方法
+            // e.preventDefault();  // jq 标准方法
+        });
+    </script>
 </body>
 </html>
