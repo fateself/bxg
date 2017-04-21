@@ -13,7 +13,8 @@ require.config({
 
     //个人
     common:'assets/js/common',
-    login:'assets/js/index/login'
+    login:'assets/js/index/login',
+    teacherList:'assets/js/teacher/list'
 
   }
 
