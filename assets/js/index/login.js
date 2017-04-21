@@ -5,7 +5,7 @@ define( [ 'jquery', 'cookie' ], function ( $ ) {
 
          $( '#loginForm' ).on( 'submit', function ( e ) {
 
-
+            console.log(1);
             // 在 jq 中提供了一个方法 序列化( serialize )
             var formData = $( this ).serialize();
 

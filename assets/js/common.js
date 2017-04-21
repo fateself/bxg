@@ -123,7 +123,9 @@
   if ( r1.test( pathname ) ) {
     $( '.index' ).addClass( 'active' );
   } else {
-    console.log( r2.exec( pathname )[ 1 ].replace( '/', '-' ) );
+    // console.log( r2.exec( pathname )[ 1 ].replace( '/', '-' ) );
+
+    $( '.' + r2.exec( pathname )[ 1 ].replace( '/', '-' ) ).addClass ( 'active' );
   }
 
       

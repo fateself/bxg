@@ -9,13 +9,22 @@ require.config({
     cookie: 'node_modules/jquery.cookie/jquery.cookie',
     less: 'node_modules/less/dist/less',
     nprogress: 'node_modules/nprogress/nprogress',
+    bootstrap: 'node_modules/bootstrap/dist/js/bootstrap',
 
 
     //个人
     common:'assets/js/common',
     login:'assets/js/index/login',
-    teacherList:'assets/js/teacher/list'
+    teacherList:'assets/js/teacher/list',
+    filter: 'assets/js/artTemplateFilter' 
 
+
+  },
+
+  shim: {
+    bootstrap: {
+      deps: ['jquery']
+    }
   }
 
 })
