@@ -16,7 +16,9 @@ require.config({
     common:'assets/js/common',
     login:'assets/js/index/login',
     teacherList:'assets/js/teacher/list',
-    filter: 'assets/js/artTemplateFilter' 
+    filter: 'assets/js/artTemplateFilter',
+    header: 'assets/js/common/header',
+    teacherAdd: 'assets/js/teacher/add'
 
 
   },
@@ -29,4 +31,4 @@ require.config({
 
 })
 
-require( [ 'common' , 'less' ] );
+require( [ 'common' , 'less', 'header' ] );

@@ -76,6 +76,7 @@
     </div>
 
     <script type="text/template" id="teacherListTrTpl">
+
         {{each list}}
         <tr>
             <td>{{$index+1}}</td>
@@ -85,10 +86,10 @@
             <td>{{$value.tc_gender|gender}}</td>
             <td>{{$value.tc_cellphone}}</td>
             <td>{{$value.tc_join_date}}</td>
-            <td>
+            <td data-teacher-id = "{{$value.tc_id}}">
                 <a href="#teacherModal" data-toggle="modal" class="btn btn-info btn-xs teacherInfoShow" data-teacher-id="{{$value.tc_id}}">查 看</a>
                 <a href="./teacher_add.html" class="btn btn-info btn-xs teacherInfoEdit">编 辑</a>
-                <a href="javascript:;" class="btn btn-warning btn-xs teacherInfoStatus">注 销</a>
+                <a href="javascript:;" class="btn btn-warning btn-xs teacherInfoStatus" data-tc-status="{{$value.tc_status}}">{{$value.tc_status|statusParse}}</a>
             </td>
         </tr>
         {{/each}}
