@@ -6,8 +6,11 @@
   "dependencies": {
     "art-template": "^4.0.0-beta8",
     "bootstrap": "^3.3.7",
+    "bootstrap-datepicker": "^1.6.4",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
+    "jquery-form": "^4.2.1",
+    "jquery-validation": "^1.16.0",
     "jquery.cookie": "^1.4.1",
     "less": "^2.7.2",
     "nprogress": "^0.2.0",

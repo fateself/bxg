@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>学IT - 后台管理系统</title>
-    <?php include_once( '/views/common/style.html' )?>
+    <?php include_once( '/views/common/style.html' ) ?>
 </head>
 <body>
     
     <!-- 侧边栏 -->
-<?php include_once( '/views/common/aside.html' )?>
+    <?php include_once( '/views/common/aside.html' ) ?>
     <!-- 主体 -->
     <div class="main">
         <div class="container-fluid">
             <!-- 头部 -->
-             <?php include_once( '/views/common/header.html' )?>
+            <?php include_once( '/views/common/header.html' ) ?>
             <div class="body teacher">
                 <!-- 面包屑 -->
                 <ol class="breadcrumb">
@@ -21,48 +21,67 @@
                     <li class="active">讲师添加</li>
                 </ol>
                 <div class="teacher-add">
-                    <form action="" class="form-horizontal col-md-offset-2">
+                    <form id="teacherForm" class="form-horizontal col-md-offset-2">
                         <div class="form-group">
                             <label for="" class="col-md-3 control-label">姓名</label>
                             <div class="col-md-4">
-                                <input type="text" class="form-control input-sm" placeholder="讲师名称">
+                                <input type="text" name="tc_name" class="form-control input-sm" placeholder="讲师名称" 
+                                data-required="true"
+                                data-describedby="tc_name"
+                                data-description="tc_name">
+                                <span class="validateRequired" id="tc_name"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="" class="col-md-3 control-label">密码</label>
                             <div class="col-md-4">
-                                <input type="password" class="form-control input-sm">
+                                <input type="password" name="tc_pass" class="form-control input-sm" data-required="true"
+                                data-required="true"
+                                data-describedby="tc_pass"
+                                data-description="tc_pass">
+                                <span class="validateRequired" id="tc_pass"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="" class="col-md-3 control-label">入职时间</label>
                             <div class="col-md-4">
-                                <input type="text" class="form-control input-sm">
+                                <input type="text" name="tc_join_date" class="form-control input-sm" 
+                                
+                                data-required="true"
+                                data-required="true"
+                                data-describedby="tc_join_date"
+                                data-description="tc_join_date"
+                                data-pattern="^\d{4}-\d{2}-\d{2}$"
+                                
+                                data-provide="datepicker"
+                                data-date-language="zh-CN"
+                                data-date-format="yyyy-mm-dd">
+                                <span class="validateRequired" id="tc_join_date"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="" class="col-md-3 control-label">类型</label>
                             <div class="col-md-2">
-                                <select name="" class="form-control input-sm">
-                                    <option value="">讲师</option>
-                                    <option value="">管理员</option>
+                                <select name="tc_type" class="form-control input-sm" >
+                                    <option value="1">讲师</option>
+                                    <option value="0">管理员</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="" class="col-md-3 control-label">性别</label>
                             <div class="col-md-4">
-                                <label class="radio-inline">
-                                    <input type="radio" checked> 男
+                                <label class="radio-inline" >
+                                    <input type="radio" name="tc_gender" value="0" checked> 男
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio"> 女
+                                    <input type="radio" name="tc_gender" value="1"> 女
                                 </label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-7">
-                                <a href="./advert_list.html" class="btn btn-success btn-sm pull-right"> 添 加 </a>
+                                <input type="submit" class="btn btn-success btn-sm pull-right" value=""/>
                             </div>                          
                         </div>
                     </form>
@@ -71,6 +90,9 @@
         </div>
     </div>
 
-    <?php include_once( '/views/common/script.html' )?>
+    <?php include_once( '/views/common/script.html' ) ?>
+    <script>
+        require( [ 'teacherAdd' ] );
+    </script>
 </body>
 </html>

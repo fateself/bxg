@@ -10,10 +10,10 @@ define( ['jquery' , 'template' , 'bootstrap' , 'filter' ], function ( $ , templa
       if (info.code == 200 ) {
         //加载数据的代码写在这
         // 1.加载模板和数据，渲染模板，生成html格式的字符串
-        console.log(info.result);
+        // console.log(info.result);
         var html = template( 'teacherListTrTpl', { list : info.result } );
 
-        console.log(html);
+        // console.log(html);
         // 2 . 加到页面中
         $( '#teacherList tbody' ).html( html );
 

@@ -46,7 +46,7 @@ define([ 'template' ], function ( template ) {
    
 
     template.defaults.imports.age = getAge;
-    console.log(2);
+    // console.log(2);
 
     template.defaults.imports.gender = function ( gender ) {
         return gender == 0 ? '男' : '女'; 

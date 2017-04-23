@@ -10,6 +10,11 @@ require.config({
     less: 'node_modules/less/dist/less',
     nprogress: 'node_modules/nprogress/nprogress',
     bootstrap: 'node_modules/bootstrap/dist/js/bootstrap',
+    validate: 'node_modules/jquery-validation/dist/jquery.validate',
+    datepicker:'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker',
+    zhCN:'node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min',
+    form:'node_modules/jquery-form/dist/jquery.form.min',
+
 
 
     //个人
@@ -26,6 +31,15 @@ require.config({
   shim: {
     bootstrap: {
       deps: ['jquery']
+    },
+    validate: {
+      deps: ['jquery']
+    },
+    datepicker: {
+      deps: [ 'jquery' ]
+    },
+    zhCN:{
+      deps: ['datepicker']
     }
   }
 
